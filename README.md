@@ -1,6 +1,6 @@
 # Getting Started with React 101 Basics
 
-This course was taken in bdtask Web Development with ReactJS training [BDTask](https://github.com/facebook/create-react-app).
+This course was taken in bdtask Web Development with ReactJS training [BDTask](https://www.bdtask.com/).
 
 ## Available Sources
 
