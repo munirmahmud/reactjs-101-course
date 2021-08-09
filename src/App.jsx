@@ -1,26 +1,24 @@
-import { Fragment } from "react";
-import AdminHeader from "./components/AdminHeader";
-import Header from "./components/Header";
-import SignOut from "./components/SignOut";
+import React, { useState } from "react";
 
 function App() {
-  const isAuth = false;
+  const [currentLanguage, setCurrentLanguage] = useState("Python");
+
+  const [inputValue, setInputValue] = useState("");
+
+  function handleLanguage(e) {
+    setCurrentLanguage("JavaScript");
+  }
 
   return (
     <div>
-      {isAuth ? (
-        <Fragment>
-          <AdminHeader />
-          <SignOut />
-        </Fragment>
-      ) : (
-        <Header name="Munir Mahmud" age={45}>
-          <p>I love reactjs and it's convension</p>
-          <button>Please Login</button>
-        </Header>
-      )}
-
-      <footer>Copyright 2021</footer>
+      <button onClick={handleLanguage}>Change Language</button>
+      <h3>I Work with {currentLanguage}</h3>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <h2>Output: {inputValue}</h2>
     </div>
   );
 }
