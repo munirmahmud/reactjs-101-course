@@ -1,24 +1,39 @@
 import React, { useState } from "react";
 
 function App() {
-  const [currentLanguage, setCurrentLanguage] = useState("Python");
+  const formValues = {
+    name: "",
+    email: "",
+    password: "",
+  };
+  const [values, setValues] = useState(formValues);
 
-  const [inputValue, setInputValue] = useState("");
+  function handleChange(e) {
+    const { name, value } = e.target;
 
-  function handleLanguage(e) {
-    setCurrentLanguage("JavaScript");
+    setValues({ ...values, [name]: value });
   }
 
   return (
     <div>
-      <button onClick={handleLanguage}>Change Language</button>
-      <h3>I Work with {currentLanguage}</h3>
       <input
         type="text"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        name="name"
+        value={values.name}
+        onChange={handleChange}
       />
-      <h2>Output: {inputValue}</h2>
+      <input
+        type="email"
+        name="email"
+        value={values.email}
+        onChange={handleChange}
+      />
+      <input
+        type="password"
+        name="password"
+        value={values.password}
+        onChange={handleChange}
+      />
     </div>
   );
 }
