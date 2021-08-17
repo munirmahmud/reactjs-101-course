@@ -1,27 +1,69 @@
-import { Fragment } from "react";
-import AdminHeader from "./components/AdminHeader";
-import Header from "./components/Header";
-import SignOut from "./components/SignOut";
+import React, { useState } from "react";
 
 function App() {
-  const isAuth = false;
+  const formValues = {
+    name: "",
+    email: "",
+    password: "",
+  };
+  const [values, setValues] = useState(formValues);
+  const [isLoading, setLoading] = useState(false);
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+
+    setValues({ ...values, [name]: value });
+  }
+
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    if(!values.name) {
+      alert('Please enter your full name');
+      setLoading(false);
+      return;
+    } else if(!values.email) {
+      alert('Please enter your email');
+      setLoading(false);
+      return;
+    }
+
+    setValues({
+      name: "",
+      email: "",
+      password: "",
+    });
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+  };
 
   return (
-    <div>
-      {isAuth ? (
-        <Fragment>
-          <AdminHeader />
-          <SignOut />
-        </Fragment>
-      ) : (
-        <Header name="Munir Mahmud" age={45}>
-          <p>I love reactjs and it's convension</p>
-          <button>Please Login</button>
-        </Header>
-      )}
+    <form onSubmit={handleSubmitForm}>
+      <input
+        type="text"
+        name="name"
+        placeholder="Full Name"
+        value={values.name}
+        onChange={handleChange}
+      />
+      <input
+        type="email"
+        name="email"
+        value={values.email}
+        onChange={handleChange}
+      />
+      <input
+        type="password"
+        name="password"
+        value={values.password}
+        onChange={handleChange}
+      />
 
-      <footer>Copyright 2021</footer>
-    </div>
+      <button type="submit" disabled={isLoading}>{isLoading ? `Submitting...` : "Submit"}</button>
+    </form>
   );
 }
 
