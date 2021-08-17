@@ -7,6 +7,7 @@ function App() {
     password: "",
   };
   const [values, setValues] = useState(formValues);
+  const [isLoading, setLoading] = useState(false);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -14,11 +15,37 @@ function App() {
     setValues({ ...values, [name]: value });
   }
 
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    if(!values.name) {
+      alert('Please enter your full name');
+      setLoading(false);
+      return;
+    } else if(!values.email) {
+      alert('Please enter your email');
+      setLoading(false);
+      return;
+    }
+
+    setValues({
+      name: "",
+      email: "",
+      password: "",
+    });
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+  };
+
   return (
-    <div>
+    <form onSubmit={handleSubmitForm}>
       <input
         type="text"
         name="name"
+        placeholder="Full Name"
         value={values.name}
         onChange={handleChange}
       />
@@ -34,7 +61,9 @@ function App() {
         value={values.password}
         onChange={handleChange}
       />
-    </div>
+
+      <button type="submit" disabled={isLoading}>{isLoading ? `Submitting...` : "Submit"}</button>
+    </form>
   );
 }
 
