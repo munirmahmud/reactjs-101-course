@@ -1,14 +1,22 @@
-const Header = (props) => {
-  const { name, age, children } = props;
-  console.log(props);
+import React from "react";
+
+const Header = ({ user, setUser }) => {
+  const handleLogout = () => {
+    setUser("");
+    localStorage.removeItem("username");
+  };
 
   return (
-    <>
-      <h2>
-        Hello, I am from Header. My name is {name} and my age is {age}
-      </h2>
-      {children}
-    </>
+    <div>
+      <p> Welcome {user}!</p>
+      <button
+        className="btn btn-secondary"
+        type="button"
+        onClick={handleLogout}
+      >
+        Log Out
+      </button>
+    </div>
   );
 };
 
