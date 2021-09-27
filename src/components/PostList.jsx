@@ -1,7 +1,14 @@
 import React from "react";
+import Post from "./Post";
 
-const PostList = () => {
-  return <div>Post list</div>;
+const PostList = ({ posts }) => {
+  return (
+    <div className="mb-5 mt-5">
+      {posts.map((post) => (
+        <Post key={post.id} post={post} />
+      ))}
+    </div>
+  );
 };
 
 export default PostList;
