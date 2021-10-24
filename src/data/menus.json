@@ -1,0 +1,41 @@
+{
+  "menus": [
+    {
+      "id": 1,
+      "title": "Home",
+      "link": "/",
+      "subMenus": []
+    },
+    {
+      "id": 2,
+      "title": "Pages",
+      "link": "#",
+      "subMenus": [
+        {
+            "id": "1",
+            "title": "About 2",
+            "link": "/",
+            "subMenus": []
+          },
+          {
+            "id": 2,
+            "title": "Home",
+            "link": "/",
+            "subMenus": []
+          }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Services",
+      "link": "/services",
+      "subMenus": []
+    }
+    {
+      "id": 3,
+      "title": "About Us",
+      "link": "/about-us",
+      "subMenus": []
+    }
+  ]
+}

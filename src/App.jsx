@@ -1,28 +1,21 @@
-import { Fragment } from "react";
-import AdminHeader from "./components/AdminHeader";
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import "./app.css";
 import Header from "./components/Header";
-import SignOut from "./components/SignOut";
+import { AboutUs, Home, Services } from "./pages";
 
-function App() {
-  const isAuth = false;
-
+const App = () => {
   return (
-    <div>
-      {isAuth ? (
-        <Fragment>
-          <AdminHeader />
-          <SignOut />
-        </Fragment>
-      ) : (
-        <Header name="Munir Mahmud" age={45}>
-          <p>I love reactjs and it's convension</p>
-          <button>Please Login</button>
-        </Header>
-      )}
+    <>
+      <Header />
 
-      <footer>Copyright 2021</footer>
-    </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about-us" component={AboutUs} />
+        <Route exact path="/services" component={Services} />
+      </Switch>
+    </>
   );
-}
+};
 
 export default App;

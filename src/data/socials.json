@@ -1,0 +1,34 @@
+{
+  "socials": [
+    {
+      "id": 1,
+      "title": "facebook",
+      "link": "https://facebook.com",
+      "iconName": "facebook"
+    },
+    {
+      "id": 2,
+      "title": "twitter",
+      "link": "https://twitter.com",
+      "iconName": "twitter"
+    },
+    {
+      "id": 3,
+      "title": "google-plus",
+      "link": "https://google-plus.com",
+      "iconName": "google-plus"
+    },
+    {
+      "id": 4,
+      "title": "dribbble",
+      "link": "https://dribbble.com",
+      "iconName": "dribbble"
+    },
+    {
+      "id": 5,
+      "title": "linkedin",
+      "link": "https://linkedin.com",
+      "iconName": "linkedin"
+    }
+  ]
+}

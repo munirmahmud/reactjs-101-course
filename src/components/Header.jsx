@@ -1,14 +1,21 @@
-const Header = (props) => {
-  const { name, age, children } = props;
-  console.log(props);
+import React from "react";
+import { socials } from "../data/socials.json";
+import Navigation from "./Navigation";
+import SocialMedia from "./SocialMedia";
 
+const Header = () => {
   return (
-    <>
-      <h2>
-        Hello, I am from Header. My name is {name} and my age is {age}
-      </h2>
-      {children}
-    </>
+    <header id="header">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 overflow">
+            <SocialMedia socials={socials} />
+          </div>
+        </div>
+      </div>
+
+      <Navigation />
+    </header>
   );
 };
 
