@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const HeroSection = ({ title, subtitle, images }) => {
   const preloaderRef = useRef(null);
@@ -9,6 +10,10 @@ const HeroSection = ({ title, subtitle, images }) => {
     });
   }, []);
 
+  const handleClick = () => {
+    console.log("Hello, clicked");
+  };
+
   return (
     <section id="home-slider">
       <div className="container">
@@ -18,9 +23,9 @@ const HeroSection = ({ title, subtitle, images }) => {
               {title && <h1>{title}</h1>}
               {subtitle && <p>{subtitle}</p>}
 
-              <a href="#" className="btn btn-common">
+              <Link to="/signup" className="btn btn-common">
                 SIGN UP
-              </a>
+              </Link>
             </div>
 
             {images.length > 1 ? (

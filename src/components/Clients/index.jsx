@@ -3,7 +3,6 @@ import { clients } from "../../data/clients.json";
 import ClientItem from "./ClientItem";
 
 const Clients = () => {
-  console.log(clients);
   return (
     <section id="clients">
       <div className="container">
