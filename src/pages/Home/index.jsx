@@ -1,5 +1,6 @@
 import React from "react";
 import Action from "../../components/Action";
+import Clients from "../../components/Clients";
 import Features from "../../components/Features";
 import HeroSection from "../../components/HeroSection";
 import ServiceCard from "../../components/ServiceCard";
@@ -33,14 +34,16 @@ const Home = () => {
         title="Triangle Corporate Template"
         subtitle="A responsive, retina-ready & wide multipurpose template."
       >
-        <div class="tour-button">
-          <a href="#" class="btn btn-common">
+        <div className="tour-button">
+          <a href="#" className="btn btn-common">
             TAKE THE TOUR
           </a>
         </div>
       </Action>
 
       <Features />
+
+      <Clients />
     </>
   );
 };

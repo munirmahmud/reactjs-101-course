@@ -1,0 +1,15 @@
+{
+  "clients": [
+    {
+      "logo": "client1.png",
+      "client_url": "https://facebook.com",
+      "name": "Facebook"
+    },
+    {
+      "logo": "client2.png",
+      "client_url": "https://twitter.com",
+      "name": "Twitter"
+    },
+    { "logo": "client3.png", "client_url": "#", "name": "Instagram" }
+  ]
+}
